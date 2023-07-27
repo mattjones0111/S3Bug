@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Data\random.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\random.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.Core" Version="3.7.106.32" />
+    <PackageReference Include="AWSSDK.S3" Version="3.7.104.11" />
+    <PackageReference Include="AWSSDK.SSO" Version="3.7.100.125" />
+    <PackageReference Include="AWSSDK.SSOOIDC" Version="3.7.100.125" />
+    <PackageReference Include="Testcontainers" Version="3.3.0" />
+  </ItemGroup>
+
+</Project>
