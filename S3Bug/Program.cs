@@ -1,4 +1,10 @@
-﻿using Amazon.Runtime;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using DotNet.Testcontainers.Builders;
@@ -15,8 +21,8 @@ namespace S3Bug
             try
             {
                 container = new ContainerBuilder()
-                    .WithImage("localstack/localstack:latest")
-                    //.WithImage("localstack/localstack:2.2.0")
+                    .WithImage("localstack/localstack:latest")  // <-- doesn't work
+                    //.WithImage("localstack/localstack:2.2.0") // <-- works
                     .WithPortBinding(4566, true)
                     .WithCleanUp(true)
                     .Build();
@@ -161,7 +167,7 @@ namespace S3Bug
 
         private static MemoryStream GetChunk(
             Stream stream,
-            int chunkSizeInMegabytes = 1)
+            int chunkSizeInMegabytes = 10)
         {
             var result = new MemoryStream();
             long bytesWritten = 0;
@@ -175,7 +181,7 @@ namespace S3Bug
                 bytesWritten += bytesRead;
 
                 if (bytesRead == 0 ||
-                    bytesWritten >= 10 * 1024 * 1024)
+                    bytesWritten >= chunkSizeInMegabytes * 1024 * 1024)
                 {
                     done = true;
                 }

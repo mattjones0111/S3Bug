@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\repo-personal\\S3Bug\\S3Bug\\S3Bug.csproj": {}
+  },
+  "projects": {
+    "C:\\repo-personal\\S3Bug\\S3Bug\\S3Bug.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\repo-personal\\S3Bug\\S3Bug\\S3Bug.csproj",
+        "projectName": "S3Bug",
+        "projectPath": "C:\\repo-personal\\S3Bug\\S3Bug\\S3Bug.csproj",
+        "packagesPath": "C:\\Users\\m.jones\\.nuget\\packages\\",
+        "outputPath": "C:\\repo-personal\\S3Bug\\S3Bug\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\m.jones\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/fourthline/KYC/_packaging/fourthline/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.7.106.32, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.104.11, )"
+            },
+            "AWSSDK.SSO": {
+              "target": "Package",
+              "version": "[3.7.100.125, )"
+            },
+            "AWSSDK.SSOOIDC": {
+              "target": "Package",
+              "version": "[3.7.100.125, )"
+            },
+            "Testcontainers": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
